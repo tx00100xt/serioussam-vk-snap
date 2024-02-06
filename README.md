@@ -20,7 +20,6 @@
 ![my-snap-name](screenshot.png?raw=true "my-snap-name")
 -->
 
-# SeriousSamClassic-VK snap
 <!--
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/serioussam-vk)
 -->
@@ -69,7 +68,10 @@ or
 
     $ serioussam-vk.se
 
-or simply run the desktop entry, called **Serious Sam The First Encounter**, **Serious Sam The Second Encounter**.
+or simply run the desktop entry, called:  
+  
+**Serious Sam The First Encounter**,  
+**Serious Sam The Second Encounter**.
 
 ## Known Issues
 
@@ -113,7 +115,7 @@ or simply run the desktop entry, called **Serious Sam The First Encounter**, **S
 <p align="center">SeriousSamClassic-VK running on Linux with XPLUS Mod. The Grand Cathedral</p>
 
 ## Upstream Project
-<p>All credit naturally goes to the <a href="https://github.com/tx00100xt/SeriousSamClassic-VK/">Alexander Pavlov</a>.</p>
+https://github.com/tx00100xt/SeriousSamClassic-VK
 
 ## Licenses
 Serious Engine is licensed under the GNU GPL v2 (see LICENSE file).
