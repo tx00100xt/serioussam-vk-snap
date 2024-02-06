@@ -1,0 +1,32 @@
+--- a/SamTFE/serioussam.desktop	2024-01-25 13:57:23.483929853 +0300
++++ b/SamTFE/serioussam.desktop	2024-01-25 14:00:54.558511402 +0300
+@@ -1,9 +1,9 @@
+-
+ [Desktop Entry]
+ Name=Serious Sam The First Encounter
+ Type=Application
+ Comment=Linux port of Serious Sam Classic The First Encounter
+-Exec=serioussam
+-TryExec=serioussam
+-Icon=serioussam
+-Categories=Application;Game;
++Exec=serioussam-vk
++TryExec=serioussam-vk
++Icon=${SNAP}/meta/gui/serioussam-vk.png
++Categories=Game;ActionGame;Shooter;
++Keywords=serious;sam;first;person;shooter;singleplayer;multiplayer;
+--- a/SamTSE/serioussamse.desktop	2024-01-25 13:57:23.483929853 +0300
++++ b/SamTSE/serioussamse.desktop	2024-01-25 14:00:54.558511402 +0300
+@@ -2,7 +2,8 @@
+ Name=Serious Sam The Second Encounter
+ Type=Application
+ Comment=Linux port of Serious Sam Classic The Second Encounter
+-Exec=serioussamse
+-TryExec=serioussamse
+-Icon=serioussam
+-Categories=Application;Game;
++Exec=serioussam-vk.se
++TryExec=serioussam-vk.se
++Icon=${SNAP}/meta/gui/serioussam-vk.png
++Categories=Game;ActionGame;Shooter;
++Keywords=serious;sam;first;person;shooter;singleplayer;multiplayer;

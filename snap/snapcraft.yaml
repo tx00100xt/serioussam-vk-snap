@@ -1,16 +1,195 @@
-name: my-snap-name # you probably want to 'snapcraft register <name>'
-version: '0.1' # just for humans, typically '1.2+git' or '1.3.2'
-summary: Single-line elevator pitch for your amazing snap # 79 char long summary
-description: |
-  This is my-snap's description. You have a paragraph or two to tell the
-  most important story about your snap. Keep it under 100 words though,
-  we live in tweetspace and your description wants to look good in the snap
-  store.
-
+name: serioussam-vk
 base: core22
-confinement: devmode # use 'strict' once you have the right plugs and slots
+version: '1.10.6d'
+summary: Serious-Engine Source Port with Vulkan Support
+description: |
+  SeriouSamClassic-VK is a family of enhanced ports of the Serious-Engine for running on modern operating systems.
+  It runs on Windows, Linux, FreeBSD, and OS X, and adds new features not found in the games as originally
+  published by Croteam.
+  
+  Note:
+  This package only provides the engine, you need a valid copy of the (proprietary) game data to launch the game.
+  When you first start the game, you will be asked to place your game data along the following paths:
+
+    ~/snap/serioussam-vk/current/.local/share/Serious-Engine/serioussam
+
+    ~/snap/serioussam-vk/current/.local/share/Serious-Engine/serioussamse
+
+  You can place game data in these paths before starting the game. Then the game will start immediately. 
+  To start Serious Sam Classic The First Encounter, you can also use the command:
+
+    serioussam-vk
+
+  To start Serious Sam Classic The Second Encounter, you can also use the command:
+
+    serioussam-vk.se
+
+  Snap build from https://github.com/tx00100xt/serioussam-vk-snap
+    
+license: "GPL-2.0"
+source-code: "https://github.com/tx00100xt/SeriousSamClassic-VK"
+grade: stable
+confinement: strict
+  
+apps:
+  serioussam-vk:
+    environment:
+      LD_LIBRARY_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/alsa-lib:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET
+      XKB_CONFIG_ROOT: $SNAP/usr/share/X11/xkb  
+      ALWAYS_USE_PULSEAUDIO: '1'
+    command: usr/bin/serioussam
+    desktop: usr/share/applications/serioussam-vk.desktop
+    command-chain:
+    - bin/graphics-core22-wrapper
+    - snap/command-chain/alsa-launch
+    plugs: [ wayland, x11, desktop, desktop-legacy , opengl , alsa, audio-playback, audio-record, pulseaudio, removable-media, network, joystick ]
+
+  se:
+    environment:
+      LD_LIBRARY_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/alsa-lib:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET
+      XKB_CONFIG_ROOT: $SNAP/usr/share/X11/xkb
+      ALWAYS_USE_PULSEAUDIO: '1'
+    command: usr/bin/serioussamse
+    desktop: usr/share/applications/serioussamse-vk.desktop
+    command-chain:
+    - bin/graphics-core22-wrapper
+    - snap/command-chain/alsa-launch
+    plugs: [ wayland, x11, desktop, desktop-legacy , opengl, alsa, audio-playback, audio-record, pulseaudio, removable-media, network, joystick ]
+    
+plugs:
+  graphics-core22:
+    interface: content
+    target: $SNAP/graphics
+    default-provider: mesa-core22
+
+layout:
+  /usr/share/libdrm:
+    bind: $SNAP/graphics/libdrm
+  /usr/share/drirc.d:
+    symlink: $SNAP/graphics/drirc.d
+  /usr/share/X11/XErrorDB:
+    symlink: $SNAP/graphics/X11/XErrorDB
+  /usr/share/X11/locale:
+    symlink: $SNAP/graphics/X11/locale
+  /usr/share/X11/xkb:
+    symlink: $SNAP/graphics/X11/xkb
+  /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib:
+    bind: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib
+  /usr/share/alsa:
+    bind: $SNAP/usr/share/alsa
 
 parts:
-  my-part:
-    # See 'snapcraft plugins'
-    plugin: nil
+  serioussam-vk:
+    after: [alsa-mixin]
+    source: https://github.com/tx00100xt/SeriousSamClassic-VK.git
+    source-tag: '1.10.6d'
+    override-pull: |
+      snapcraftctl pull
+      patch -p1 -d $SNAPCRAFT_PART_SRC < $SNAPCRAFT_PROJECT_DIR/snap/local/0001-CMakeLists.txt.patch
+      patch -p1 -d $SNAPCRAFT_PART_SRC < $SNAPCRAFT_PROJECT_DIR/snap/local/0002-Engine.cpp.patch
+      patch -p1 -d $SNAPCRAFT_PART_SRC < $SNAPCRAFT_PROJECT_DIR/snap/local/0003-desktop-file.patch
+    plugin: cmake
+    cmake-parameters:
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DCMAKE_INSTALL_PREFIX=/usr
+    build-packages:
+      - nasm
+      - bison
+      - flex
+      - make
+      - cmake
+      - build-essential      
+      - libsdl2-dev
+      - zlib1g-dev
+      - libvulkan-dev
+      - libvorbis-dev
+      - libogg-dev
+    stage-packages:
+      - libvulkan1
+      - libsdl2-2.0-0
+      - libwayland-client0
+      - libvorbisfile3
+      - libpulse0
+      - libasound2
+      - libasound2-plugins
+      - libvorbis0a
+      - libogg0
+      - zlib1g
+      
+  xplus:
+    after: [ serioussam-vk ]  
+    source: https://github.com/tx00100xt/SeriousSamClassic-VK.git
+    source-tag: '1.10.6d'
+    override-pull: |
+      snapcraftctl pull
+      patch -p1 -d $SNAPCRAFT_PART_SRC < $SNAPCRAFT_PROJECT_DIR/snap/local/0001-CMakeLists.txt.patch
+    plugin: cmake
+    cmake-parameters:
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DCMAKE_INSTALL_PREFIX=/usr
+      - -DXPLUS=TRUE
+    build-packages:
+      - nasm
+      - bison
+      - flex
+      - make
+      - cmake
+      - build-essential      
+      - libsdl2-dev
+      - zlib1g-dev
+      - libvulkan-dev
+      - libvorbis-dev
+      - libogg-dev
+    stage-packages:
+      - libvulkan1
+      - libsdl2-2.0-0
+      - libwayland-client0
+      - libvorbisfile3
+      - libpulse0
+      - libasound2
+      - libasound2-plugins
+      - libvorbis0a
+      - libogg0
+      - zlib1g
+
+  graphics-core22:
+    after: [ serioussam-vk ]
+    source: https://github.com/MirServer/graphics-core22.git
+    plugin: dump
+    override-prime: |
+      craftctl default
+      ${CRAFT_PART_SRC}/bin/graphics-core22-cleanup mesa-core22 nvidia-core22
+    prime:
+    - bin/graphics-core22-wrapper   
+
+  alsa-mixin:
+    plugin: dump
+    source: https://github.com/diddlesnaps/snapcraft-alsa.git
+    source-subdir: snapcraft-assets
+    build-packages:
+      - libasound2-dev
+    stage-packages:
+      - libasound2
+      - libasound2-plugins
+      - yad
+    stage:
+      # restrict to only audio-related files - you need to ensure
+      # that gtk3 is staged for yad to work correctly, to prompt
+      # users to connect the alsa plug or proceed with pulseaudio.
+      #
+      # This helps prevent symbol conflicts in situations where
+      # you're using a non-default library, such as those that the
+      # gnome-3-34 extension for core18 provides.
+      - etc/asound.conf
+      - snap/command-chain/alsa-launch
+      - usr/bin/yad*
+      - usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib
+      - usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libasound*
+      - usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libdnsfile*
+      - usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libFLAC*
+      - usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libjack*
+      - usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libpulse*
+      - usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libsamplerate*
+      - usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libspeex*
+      - usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libvorbis*
+      - usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio  
