@@ -128,6 +128,8 @@ Next, run the modification from the game menu
 ## Upstream Project
 https://github.com/tx00100xt/SeriousSamClassic-VK
 
+<a href="https://github.com/tx00100xt/tx00100xt/blob/main/gpg-personal.pub" target="_blank"> <img alt="" src="https://img.shields.io/badge/gpg%20personal-CDC41982C027BAAA-blue?style=for-the-badge&labelColor=090909"></a> <a href="mailto:t.x00100x.t@yandex.ru" target="_blank"> <img alt="Yandex" src="https://img.shields.io/badge/-mail.yandex-090909?style=for-the-badge&logo=data:image/svg+xml;utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwb2x5Z29uIGZpbGw9IiNERjI1MUYiIHBvaW50cz0iMTEuODE3IDEzLjAxNyA3Ljk4MyAyLjI1IDUuMzY3IDIuMjUgMTAuNTcgMTYuMjE0IDEwLjU3IDI0IDEyLjk3NSAyNCAxMi45NzUgMTYuMzAzIDE4LjYzMyAwIDE2LjIyOCAwIDExLjgxNyAxMy4wMTciLz48cG9seWdvbiBmaWxsPSIjQzIyMDFCIiBwb2ludHM9IjcuOTgzIDIuMjUgNS4zNjcgMi4yNSAxMC41NyAxNi4yMTQgMTAuNTcgMjQgMTEuODMyIDI0IDExLjgzMiAxMi45NzIgMTEuODE3IDEzLjAxNyA3Ljk4MyAyLjI1Ii8+PC9zdmc+"></a>
+
 ## Licenses
 Serious Engine is licensed under the GNU GPL v2 (see LICENSE file).
 
@@ -145,7 +147,7 @@ See https://raw.githubusercontent.com/tx00100xt/SeriousSamClassic-VK/main/LICENS
   - [x] Add a screenshot to this `README.md`
   - [ ] Publish the `devmode` snap in the Snap store edge channel
   - [x] Add install instructions to this `README.md`
-  - [x] Update snap store metadata, icons and screenshots
+  - [ ] Update snap store metadata, icons and screenshots
   - [x] Convert the snap to `strict` confinement, or `classic` confinement if it qualifies
   - [ ] Publish the confined snap in the Snap store beta channel
   - [ ] Update the install instructions in this `README.md`
