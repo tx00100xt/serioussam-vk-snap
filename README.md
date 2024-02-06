@@ -73,6 +73,17 @@ or simply run the desktop entry, called:
 **Serious Sam The First Encounter**,  
 **Serious Sam The Second Encounter**.
 
+## Running SeriousSamClassic-VK with XPLUS modification
+Run it from shell:
+
+    cd ~/.
+    wget https://archive.org/download/sam-tfe-xplus/SamTFE-XPLUS.tar.xz
+    wget https://archive.org/download/sam-tse-xplus/SamTSE-XPLUS.tar.xz
+    tar -xJvpf SamTFE-XPLUS.tar.xz -C ~/snap/serioussam-vk/current/.local/share/Serious-Engine/serioussam
+    tar -xJvpf SamTSE-XPLUS.tar.xz -C ~/snap/serioussam-vk/current/.local/share/Serious-Engine/serioussamse
+
+Next, run the modification from the game menu
+
 ## Known Issues
 
 * There is no multiplayer compatibility between Windows and *nix systems.
