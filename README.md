@@ -20,9 +20,9 @@
 ![my-snap-name](screenshot.png?raw=true "my-snap-name")
 -->
 
-<!--
+
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/serioussam-vk)
--->
+
    
   SeriouSamClassic-VK is a family of enhanced ports of the Serious-Engine for running on modern operating systems.
   It runs on Windows, Linux, FreeBSD, and OS X, and adds new features not found in the games as originally
@@ -33,12 +33,12 @@
 
 ## Installation
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
-<!-- 
+
 ### From the store
 This snap is now in the store, simply run
 
-    $ snap install serioussam-vk
--->	
+    $ sudo snap install serioussam-vk --beta
+
 ### Manually
 Clone this repo and run
 
