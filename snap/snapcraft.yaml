@@ -42,7 +42,7 @@ apps:
     command-chain:
     - bin/graphics-core22-wrapper
     - snap/command-chain/alsa-launch
-    plugs: [ wayland, x11, desktop, desktop-legacy , opengl , alsa, audio-playback, audio-record, pulseaudio, removable-media, network, joystick ]
+    plugs: [ wayland, x11, desktop, desktop-legacy , opengl , alsa, audio-playback, audio-record, pulseaudio, network, joystick ]
 
   se:
     environment:
@@ -54,7 +54,7 @@ apps:
     command-chain:
     - bin/graphics-core22-wrapper
     - snap/command-chain/alsa-launch
-    plugs: [ wayland, x11, desktop, desktop-legacy , opengl, alsa, audio-playback, audio-record, pulseaudio, removable-media, network, joystick ]
+    plugs: [ wayland, x11, desktop, desktop-legacy , opengl, alsa, audio-playback, audio-record, pulseaudio, network, joystick ]
     
 plugs:
   graphics-core22:
