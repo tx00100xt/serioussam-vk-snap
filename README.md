@@ -1,5 +1,5 @@
-<!--
 [![serioussamc-vk](https://snapcraft.io//serioussam-vk/badge.svg)](https://snapcraft.io/serioussam-vk)
+<!--
 [![Snap Status](https://build.snapcraft.io/badge/tx00100xt/serioussam-vk-snap.svg)](https://build.snapcraft.io/user/tx00100xt/serioussam-vk-snap)
 -->
 <h1 align="center">
@@ -142,13 +142,13 @@ See https://raw.githubusercontent.com/tx00100xt/SeriousSamClassic-VK/main/LICENS
   - [x] Rename the forked Snapcrafters template repository
   - [x] Update the description of the repository
   - [x] Update logos and references to `[Project]` and `[my-snap-name]`
-  - [ ] Create a snap that runs in `devmode`
-  - [ ] Register the snap in the store, **using the preferred upstream name**
+  - [x] Create a snap that runs in `devmode`
+  - [x] Register the snap in the store, **using the preferred upstream name**
   - [x] Add a screenshot to this `README.md`
-  - [ ] Publish the `devmode` snap in the Snap store edge channel
+  - [x] Publish the `devmode` snap in the Snap store edge channel
   - [x] Add install instructions to this `README.md`
-  - [ ] Update snap store metadata, icons and screenshots
-  - [x] Convert the snap to `strict` confinement, or `classic` confinement if it qualifies
+  - [x] Update snap store metadata, icons and screenshots
+  - [ ] Convert the snap to `strict` confinement, or `classic` confinement if it qualifies
   - [ ] Publish the confined snap in the Snap store beta channel
   - [ ] Update the install instructions in this `README.md`
   - [ ] Post a call for testing on the [Snapcraft Forum](https://forum.snapcraft.io) - [link to the post](https://forum.snapcraft.io/t/call-for-testing-for-serioussamclassic-vk/14602)
