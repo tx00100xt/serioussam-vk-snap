@@ -110,10 +110,6 @@ parts:
       - libwayland-client0
       - libvorbisfile3
       - libpulse0
-      - libasound2
-      - libasound2-plugins
-      - libvorbis0a
-      - libogg0
       - zlib1g
       
   xplus:
@@ -146,10 +142,6 @@ parts:
       - libwayland-client0
       - libvorbisfile3
       - libpulse0
-      - libasound2
-      - libasound2-plugins
-      - libvorbis0a
-      - libogg0
       - zlib1g
 
   graphics-core22:
