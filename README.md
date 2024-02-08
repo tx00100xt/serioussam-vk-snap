@@ -87,6 +87,7 @@ Next, run the modification from the game menu
 ## Known Issues
 
 * There is no multiplayer compatibility between Windows and *nix systems.
+* If there is no sound at startup, select its format from the audio menu. If you cannot select an audio format, restart the game.
 
 ## Screenshots
 <h1 align="center">
