@@ -84,10 +84,13 @@ Run it from shell:
 
 Next, run the modification from the game menu
 
+## Changelog
+
+* 2024-02-12 - Fixed no sound when starting the game for the first time. 
+
 ## Known Issues
 
 * There is no multiplayer compatibility between Windows and *nix systems.
-* If there is no sound at startup, select its format from the audio menu. If you cannot select an audio format, restart the game.
 
 ## Screenshots
 <h1 align="center">
