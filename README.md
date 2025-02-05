@@ -29,7 +29,7 @@
   published by Croteam.
 
 ## Version
-1.10.6d
+1.10.7
 
 ## Installation
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
