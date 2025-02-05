@@ -1,5 +1,14 @@
 --- a/SamTFE/Sources/CMakeLists.txt	2023-12-26 13:14:52.642181538 +0300
 +++ b/SamTFE/Sources/CMakeLists.txt	2024-01-25 13:11:34.028642313 +0300
+@@ -130,7 +130,7 @@
+ if(CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME MATCHES "GNU")
+     set(LINUX TRUE)
+     message(STATUS "Set GNU Linux TRUE")
+-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-reorder -Wno-unused-but-set-variable -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-unused-function")
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-alloc-size-larger-than -Wno-template-id-cdtor -Wno-reorder -Wno-unused-but-set-variable -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-unused-function")
+     if(CMAKE_OS_NAME STREQUAL "Gentoo" AND USE_SYSTEM_INSTALL)
+       set(RPATH_SETTINGS "-rpath=/var/tmp/portage")
+       message(STATUS "Build for Gentoo with '-rpath=/var/tmp/portage'")
 @@ -239,16 +239,6 @@
      endif()
  endif()
@@ -67,6 +76,15 @@
  # end of CMakeLists.txt ...
 --- a/SamTSE/Sources/CMakeLists.txt	2023-12-26 13:14:52.642181538 +0300
 +++ b/SamTSE/Sources/CMakeLists.txt	2024-01-25 13:11:34.028642313 +0300
+@@ -130,7 +130,7 @@
+ if(CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME MATCHES "GNU")
+     set(LINUX TRUE)
+     message(STATUS "Set GNU Linux TRUE")
+-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-reorder -Wno-unused-but-set-variable -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-unused-function")
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-alloc-size-larger-than -Wno-template-id-cdtor -Wno-reorder -Wno-unused-but-set-variable -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-unused-function")
+     if(CMAKE_OS_NAME STREQUAL "Gentoo" AND USE_SYSTEM_INSTALL)
+       set(RPATH_SETTINGS "-rpath=/var/tmp/portage")
+       message(STATUS "Build for Gentoo with '-rpath=/var/tmp/portage'")
 @@ -239,16 +239,6 @@
      endif()
  endif()
